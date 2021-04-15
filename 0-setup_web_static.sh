@@ -53,3 +53,4 @@ sudo ln -s "$LINK_TARGET" "$LINK"
 sudo chown -R ubuntu:ubuntu /data
 # Configure Nginx
 sudo sed -i "s|server_name _;|server_name bendosch.tech;\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\t}\n|" /etc/nginx/sites-enabled/default
+sudo service nginx restart
