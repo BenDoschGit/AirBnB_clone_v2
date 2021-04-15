@@ -14,7 +14,7 @@ DIRS=(
     "/data/web_static/shared"
     "/data/web_static/releases/test"
 )
-for DIR in ${DIRS[@]}; do
+for DIR in "${DIRS[@]}"; do
     if [ ! -d "$DIR" ]; then
         sudo mkdir -p "$DIR"
     fi
@@ -52,10 +52,4 @@ sudo ln -s "$LINK_TARGET" "$LINK"
 # Recusrively change owener and group to Ubuntu
 sudo chown -R ubuntu:ubuntu /data
 # Configure Nginx
-string="
-    server_name bendosch.tech;
-    location  hbnb_static {
-        alias /data/web_static/current/;
-        }
-"
-sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-enabled/default
+sudo sed -ie "s|server_name _;|server_name bendosch.tech;\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\t}\n|" /etc/nginx/sites-enabled/default
