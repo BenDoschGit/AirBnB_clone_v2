@@ -22,6 +22,7 @@ def do_pack():
         return None
     return (file)
 
+
 def do_deploy(archive_path):
     """Function that distributes an archive to your web servers,
     using the function do_deploy"""
@@ -47,6 +48,7 @@ def do_deploy(archive_path):
     except:
         print("Failed")
         return False
+
 
 def deploy():
     """ Packs and deploys """
