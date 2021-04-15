@@ -52,5 +52,5 @@ sudo ln -s "$LINK_TARGET" "$LINK"
 # Recusrively change owener and group to Ubuntu
 sudo chown -R ubuntu:ubuntu /data
 # Configure Nginx
-sudo sed -i "s|location /|location /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\t}\n|" /etc/nginx/sites-availavle/default
+sed -i 's|^\tlocation / {|\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n\n\tlocation / {|' /etc/nginx/sites-available/default
 sudo service nginx restart
