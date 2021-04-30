@@ -37,7 +37,7 @@ def python_is_fun(text):
 @app.route('/number/<int:n>')
 def number(n):
     """Sets up /number/n to respond to HTTP get requests
-    with n is a number, if n is a number"""
+    with n is a number, if n is an integer"""
     return "{} is a number".format(n)
 
 
