@@ -6,8 +6,8 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def hello_world():
-    """Sets up / to respond to HTTP get requests with hello HBNB"""
+def hello_hbnb():
+    """Sets up / to respond to HTTP get requests with Hello HBNB!"""
     return 'Hello HBNB!'
 
 
