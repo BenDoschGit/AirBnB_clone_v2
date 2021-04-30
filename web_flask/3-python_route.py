@@ -28,7 +28,7 @@ def c_is_fun(text):
 @app.route('/python/', defaults={"text": "is cool"})
 @app.route('/python/<text>')
 def python_is_fun(text):
-    """Sets up /c/text to respond to HTTP get requests
+    """Sets up /python/text to respond to HTTP get requests
     with Python follwed by the value of text"""
     text = text.replace("_", " ")
     return 'Python {}'.format(text)
