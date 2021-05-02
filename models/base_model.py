@@ -39,7 +39,6 @@ class BaseModel:
             if "updated_at" not in kwargs.keys():
                 self.updated_at = datetime.now()
 
-
     def __str__(self):
         """Returns a string representation of the instance"""
         cls = (str(type(self)).split('.')[-1]).split('\'')[0]

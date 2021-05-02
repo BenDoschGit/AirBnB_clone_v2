@@ -109,7 +109,6 @@ class DBStorage:
         Session = scoped_session(sessionFactory)
         self.__session = Session()
 
-
     def close(self):
         """calls close method of the session"""
         self.__session.close()
