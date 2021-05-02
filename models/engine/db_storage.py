@@ -53,8 +53,8 @@ class DBStorage:
             allClassObjs = self.__session.query(classes[cls]).all()
             for obj in allClassObjs:
                 key = type(obj).__name__ + "." + obj.id
-                value = obj.to_dict()
-                newDict[key] = value
+                #value = obj.to_dict()
+                newDict[key] = obj
             return (newDict)
         else:
             allDicts = {}
